@@ -1,17 +1,12 @@
 <template>
-  <div class="container">
-   <div class="home mt-3">
-       <router-view></router-view>
-   </div>
+  <div class="home mt-3 mr-2">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>

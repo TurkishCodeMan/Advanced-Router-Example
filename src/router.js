@@ -10,7 +10,7 @@ const routes=[
         component:()=>import ("@/components/TwitterHome"),
         children:[
             {
-                path:"home",
+                path:"",
                 name:"home",
                 component:()=>import ("@/components/Main"),
                 children:[

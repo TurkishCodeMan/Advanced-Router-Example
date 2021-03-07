@@ -1,54 +1,80 @@
 <template>
   <nav class="navbar navbar-expand-lg d-flex flex-column align-items-start">
-    <a class="navbar-brand" href="#"><i class="fas fa-crow"></i></a>
-
-    <ul class="navbar-nav mr-auto d-flex flex-column">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <i class="fas fa-home"></i> <b>Anasayfa</b>
-          <span class="sr-only">(current)</span></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"> <b>#</b> <b>Keşfet</b></a>
-        <a class="nav-link p-0 m-0 search" href="#"><i class="fas fa-search"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="far fa-bell"></i> <b>Bildirimler</b></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="far fa-envelope-open"></i> <b>Mesajlar</b></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-location-arrow"></i> <b>Yer İşaretleri</b></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="far fa-user"></i> <b>Profil</b></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"
-          ><i class="far fa-comment-dots"></i> <b>Daha Fazla</b></a
-        >
-      </li>
-      <li class="nav-item btn-item">
-        <a class="btn btn-tweet" href="#"
-          ><i class="fab fa-pied-piper"></i><b>Tweetle</b></a
-        >
-      </li>
-    </ul>
+    <button
+      class="navbar-toggler m-0 p-0"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      @click.prevent="navbarToggle=!navbarToggle"
+    >
+        <a class="navbar-brand m-0" href="#"><i class="fas fa-crow mr-2"></i></a>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto d-flex flex-column">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+        
+            <i class="fas fa-home"></i> <b>Anasayfa</b>
+            <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <b>#</b> <b>Keşfet</b></a>
+          <a class="nav-link p-0 m-0 search" href="#"
+            ><i class="fas fa-search"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-bell"></i> <b>Bildirimler</b></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-envelope-open"></i> <b>Mesajlar</b></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-location-arrow"></i> <b>Yer İşaretleri</b></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-user"></i> <b>Profil</b></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"
+            ><i class="far fa-comment-dots"></i> <b>Daha Fazla</b></a
+          >
+        </li>
+        <li class="nav-item btn-item">
+          <a class="btn btn-tweet" href="#"
+            ><i class="fab fa-pied-piper"></i><b>Tweetle</b></a
+          >
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return {
+      navbarToggle:false
+    }
+  },
+  watch:{
+    navbarToggle(){
+      return this.$emit("toggle",this.navbarToggle);
+    }
+  }
+};
 </script>
 
 <style lang='scss' scoped>
@@ -63,7 +89,7 @@ export default {};
       & > li > a > b {
         display: none;
       }
-      & > li >  .search {
+      & > li > .search {
         display: block;
       }
       & > li {
@@ -77,6 +103,7 @@ export default {};
     }
   }
 }
+
 .navbar {
   position: sticky;
   top: 0;
@@ -84,22 +111,16 @@ export default {};
   .navbar-brand {
     font-size: 2.2em;
   }
-  .btn-tweet {
-    background-color: $blue;
-    color: $homeText;
-    width: 100%;
-    border-radius: 18px;
-    padding: 0.7em;
-    margin-top: 1rem;
-    &:hover {
-      background: rgba($blue, 0.9);
-    }
+}
+.navbar-toggler{
+  
+.navbar-brand {
+  i{
+    font-size: 30px;
   }
 }
-.navbar-brand {
-  margin-left: 0.3rem;
-  margin-bottom: 1rem;
 }
+
 .navbar-nav {
   font-size: 20px;
   & > li > .search {
