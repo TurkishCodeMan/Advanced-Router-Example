@@ -1,0 +1,16 @@
+@import "../config/colors.scss";
+
+body {
+  background: $bgMain;
+  font-family: "Open Sans", sans-serif;
+
+}
+a {
+  color: $homeText;
+}
+.home-text{
+  color: $homeText;
+}
+
+
+
