@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 mt-3 pt-2">
       <div class="d-flex flex-column p-2">
-        <div class="news-head d-flex text-align-center p-1">
+        <div class="news-head d-flex flew- text-align-center p-1">
           <h6 class="home-text mr-2"><b>İlginizi Çekebilecek Gündemler</b></h6>
           <i class="fas fa-cog"></i>
         </div>

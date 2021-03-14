@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg d-flex flex-column align-items-start">
+  <nav class="navbar navbar-expand-lg d-flex flex-column align-items-start p-0 m-0">
     <button
       class="navbar-toggler m-0 p-0"
       type="button"
@@ -8,18 +8,17 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      @click.prevent="navbarToggle=!navbarToggle"
+      @click.prevent="navbarToggle = !navbarToggle"
     >
-        <a class="navbar-brand m-0" href="#"><i class="fas fa-crow mr-2"></i></a>
+      <a class="navbar-brand m-0" href="#"><i class="fas fa-crow mr-2"></i></a>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto d-flex flex-column">
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 d-flex flex-row justify-content-center align-items-center">
         <li class="nav-item active">
-          <router-link class="nav-link" tag="a" :to="{name:'home'}">
-        
+          <router-link class="nav-link" tag="a" :to="{ name: 'home' }">
             <i class="fas fa-home"></i> <b>Anasayfa</b>
-            <span class="sr-only">(current)</span></router-link>
-          
+            <span class="sr-only">(current)</span></router-link
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"> <b>#</b> <b>Keşfet</b></a>
@@ -28,10 +27,10 @@
           ></a>
         </li>
         <li class="nav-item">
-             <router-link class="nav-link" tag="a" :to="{name:'admin',query:{test:'test'}}">
-        
+          <router-link class="nav-link" tag="a" to="/admin">
             <i class="fas fa-home"></i> <b>Bildirimler</b>
-            <span class="sr-only">(current)</span></router-link>
+            <span class="sr-only">(current)</span></router-link
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
@@ -65,16 +64,16 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      navbarToggle:false
-    }
+      navbarToggle: false,
+    };
   },
-  watch:{
-    navbarToggle(){
-      return this.$emit("toggle",this.navbarToggle);
-    }
-  }
+  watch: {
+    navbarToggle() {
+      return this.$emit("toggle", this.navbarToggle);
+    },
+  },
 };
 </script>
 
@@ -98,10 +97,23 @@ export default {
 
         padding: 0.2em;
       }
+
       & .btn-tweet > i {
         display: block;
       }
     }
+  }
+}
+
+.navbar-nav {
+  .nav-item {
+    padding: 1rem;
+  }
+  & > li > a > i {
+    font-size: 25px;
+  }
+  & > li > a > b {
+    display: none;
   }
 }
 
@@ -113,13 +125,12 @@ export default {
     font-size: 2.2em;
   }
 }
-.navbar-toggler{
-  
-.navbar-brand {
-  i{
-    font-size: 30px;
+.navbar-toggler {
+  .navbar-brand {
+    i {
+      font-size: 30px;
+    }
   }
-}
 }
 
 .navbar-nav {

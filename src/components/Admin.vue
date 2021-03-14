@@ -45,17 +45,15 @@
           </div>
         </div>
       </div>
-      <Post v-for="post in 5" :key="post.index"></Post>
+      
     </div>
   </div>
 </template>
 
 <script>
-import Post from "./MainComponents/Post";
+
 export default {
-  components: {
-    Post,
-  },
+ 
 };
 </script>
 
